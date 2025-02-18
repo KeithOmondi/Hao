@@ -31,22 +31,14 @@ function App() {
   }, []);
 
 
-  const authRoutes = [
-    "/login",
-    "/signup",
-    "/forgot-password",
-    "/login/otp",
-  ];
-
-  const isAuthPage = authRoutes.includes(location.pathname) || location.pathname.startsWith("/reset-password/");
-
+ 
   return (
     <>
       {loading ? (
         <Loader />
       ) : (
         <>
-          {!isAuthPage && <Header />}
+          <Header />
           <Routes>
             <Route path="/" element={<LoginPage />} />
             <Route path="/home" element={<HomePage />} />
